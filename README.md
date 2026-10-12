@@ -2,6 +2,8 @@
 
 A self-contained static recreation of the authorized Actime Analytics preview, including its seven main views and generated image assets.
 
+The canonical and social-sharing domain is configured as `https://www.actimeanalytics.com/`.
+
 ## Run it
 
 Open `index.html` in a browser. Navigation uses hash routes, so it works without a build step or server:
@@ -15,3 +17,7 @@ Open `index.html` in a browser. Navigation uses hash routes, so it works without
 - `index.html#/contact` — Contact
 
 The contact form is a front-end demo and does not deliver submissions.
+
+## Publish on the custom domain
+
+The domain currently displays a GoDaddy parked page. The site files do not change domain DNS or publish themselves. To make the site live, deploy this folder to a static web host, configure `www.actimeanalytics.com` as the site's custom domain in that host, and update the domain's GoDaddy DNS records to the values provided by the host. Enable HTTPS at the host. Keep the `www` hostname as the preferred canonical domain, and configure the host to redirect the bare domain to `www` if desired.
