@@ -130,7 +130,7 @@ function aboutPage() {
 }
 
 function contactPage() {
-  return `${pageHero("Contact", "Let's build something intelligent.", "Tell us about the challenge you're facing. We'll bring the engineers, the data and the AI to solve it.")}<section class="section"><div class="contact-layout"><div><p class="section-label">Start a conversation</p><h2>What's the problem you want to solve?</h2><p>Share a little about your goals, your data, or the systems you want to improve. We'll get back to you to explore what is possible.</p><div class="contact-info"><a href="mailto:hello@actimeanalytics.com">hello@actimeanalytics.com ↗</a><p>Remote-first<br>Serving clients globally</p></div></div><form class="contact-form">
+  return `${pageHero("Contact", "Let's build something intelligent.", "Tell us about the challenge you're facing. We'll bring the engineers, the data and the AI to solve it.")}<section class="section"><div class="contact-layout"><div><p class="section-label">Start a conversation</p><h2>What's the problem you want to solve?</h2><p>Share a little about your goals, your data, or the systems you want to improve. We'll get back to you to explore what is possible.</p><div class="contact-info"><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com ↗</a><p>Remote-first<br>Serving clients globally</p></div></div><form class="contact-form">
     <div class="form-field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" placeholder="Alex Morgan" required></div>
     <div class="form-field"><label for="email">Work email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required></div>
     <div class="form-field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" placeholder="Company Inc."></div>
@@ -142,7 +142,7 @@ function contactPage() {
 
 function footer() {
   return `<div class="site-footer"><div class="footer-grid">
-    <div class="footer-about"><a class="brand" href="#/" aria-label="Actime Analytics home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="brand-type"><strong>ACTIME.</strong><small>ANALYTICS</small></span></a><p>AI-native software engineering, data engineering and analytics. We help businesses transform ideas into intelligent digital solutions.</p><a href="mailto:hello@actimeanalytics.com">hello@actimeanalytics.com</a></div>
+    <div class="footer-about"><a class="brand" href="#/" aria-label="Actime Analytics home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="brand-type"><strong>ACTIME.</strong><small>ANALYTICS</small></span></a><p>AI-native software engineering, data engineering and analytics. We help businesses transform ideas into intelligent digital solutions.</p><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com</a></div>
     <div class="footer-column"><h3>Services</h3>${services.slice(0,5).map((item) => routeLink(`services#${item.id}`, item.title)).join("")}</div>
     <div class="footer-column"><h3>Company</h3>${[["", "Home"],["about","About Us"],["solutions","Solutions"],["industries","Industries"],["insights","Insights"],["contact","Contact"]].map(([path,label]) => routeLink(path,label)).join("")}</div>
     <div class="footer-column"><h3>Presence</h3><p>Remote-first<br>Serving clients globally</p></div>
