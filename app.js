@@ -166,7 +166,7 @@ function careersPage() {
 
 function footer() {
   return `<div class="site-footer"><div class="footer-grid">
-    <div class="footer-about"><a class="brand" href="#/" aria-label="Actime Analytics home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="brand-type"><strong>ACTIME.</strong><small>ANALYTICS</small></span></a><p>AI-native software engineering, data engineering and analytics. We help businesses transform ideas into intelligent digital solutions.</p><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com</a></div>
+    <div class="footer-about"><a class="brand" href="#/" aria-label="Actime Analytics home"><img class="brand-mark" src="./assets/actime-mark.svg" alt=""><span class="brand-type"><strong>ACTIME<span>.</span></strong><small>ANALYTICS</small></span></a><p>AI-native software engineering, data engineering and analytics. We help businesses transform ideas into intelligent digital solutions.</p><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com</a></div>
     <div class="footer-column"><h3>Services</h3>${services.slice(0,5).map((item) => routeLink(`services#${item.id}`, item.title)).join("")}</div>
     <div class="footer-column"><h3>Company</h3>${[["", "Home"],["about","About Us"],["careers","Careers"],["solutions","Solutions"],["industries","Industries"],["insights","Insights"],["contact","Contact"]].map(([path,label]) => routeLink(path,label)).join("")}</div>
     <div class="footer-column"><h3>Presence</h3><p>Remote-first<br>Serving clients globally</p></div>

@@ -40,15 +40,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   height: 73px;
   padding: 0 32px;
 }
-.brand { display: inline-flex; align-items: center; gap: 13px; position: relative; z-index: 22; }
-.brand-mark { width: 32px; height: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; transform: rotate(0deg); }
-.brand-mark i { display: block; background: #d6e0e0; min-height: 5px; }
-.brand-mark i:nth-child(1), .brand-mark i:nth-child(4), .brand-mark i:nth-child(8) { opacity: .58; }
-.brand-mark i:nth-child(2), .brand-mark i:nth-child(6) { background: var(--teal); }
-.brand-mark i:nth-child(1), .brand-mark i:nth-child(4), .brand-mark i:nth-child(7) { visibility: hidden; }
+.brand { display: inline-flex; align-items: center; gap: 12px; position: relative; z-index: 22; }
+.brand-mark { display: block; flex: 0 0 30px; width: 30px; height: 30px; transition: transform .3s ease; }
+.brand:hover .brand-mark { transform: rotate(90deg); }
 .brand-type { display: grid; gap: 1px; line-height: 1; }
-.brand-type strong { font-size: 19px; letter-spacing: -.04em; }
-.brand-type small { font-family: var(--mono); font-size: 9px; letter-spacing: .38em; color: #aebbbd; }
+.brand-type strong { font-family: var(--display); font-size: 17px; font-weight: 700; letter-spacing: .025em; }
+.brand-type strong span { color: var(--teal); }
+.brand-type small { margin-top: 3px; font-family: var(--mono); font-size: 9px; letter-spacing: .42em; text-transform: uppercase; color: #94a3ad; }
 .header-actions { display: flex; align-items: center; gap: 15px; }
 .desktop-nav { display: none; }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-height: 52px; padding: 0 24px; border: 1px solid transparent; font-size: 13px; font-weight: 700; transition: .2s ease; }
@@ -311,7 +309,7 @@ h1, h2, h3 { font-family: var(--display); }
 }
 @media (max-width: 620px) {
   .site-header { inset: 0 0 auto; transform: none; width: auto; max-width: none; padding: 15px 17px; }
-  .brand-mark { width: 27px; height: 27px; gap: 2px; }
+  .brand-mark { flex-basis: 27px; width: 27px; height: 27px; }
   .brand-type strong { font-size: 16px; }
   .brand-type small { font-size: 7px; }
   .header-actions { gap: 8px; }
