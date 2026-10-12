@@ -3,7 +3,7 @@
 A self-contained static recreation of the authorized Actime Analytics preview, including its seven main views and generated image assets.
 
 The canonical and social-sharing domain is configured as `https://actimeanalytics.com/`.
-The content and careers/contact flows reflect the latest captured preview. The public contact address in this project is `info@actimeanalytics.com`.
+The content and careers/contact flows reflect the latest captured preview, including the six muted, looping service videos and local poster images. The public contact address in this project is `info@actimeanalytics.com`.
 
 ## Run it
 
