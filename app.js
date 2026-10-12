@@ -148,7 +148,7 @@ function contactPage() {
     <div class="form-field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" placeholder="Company Inc."></div>
     <div class="form-field"><label for="interest">I'm interested in</label><select id="interest" name="interest">${services.map((item) => `<option>${item.title}</option>`).join("")}<option>Something else</option></select></div>
     <div class="form-field full"><label for="challenge">What are you trying to solve? *</label><textarea id="challenge" name="challenge" placeholder="Tell us about the challenge, the data you have, and what success looks like." required></textarea></div>
-    <button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button><p class="form-status" role="status">Front-end demo — submissions aren't delivered to a mailbox yet</p>
+    <button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button>
   </form></div></section>${cta()}`;
 }
 
@@ -160,7 +160,7 @@ function careersPage() {
     <div class="form-field"><label for="applicant-email">Email *</label><input id="applicant-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required></div>
     <div class="form-field"><label for="applicant-phone">Phone number *</label><input id="applicant-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000" required></div>
     <div class="form-field full"><label for="resume">Resume *</label><input class="file-input" id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required><span class="file-hint">PDF or DOC — required</span></div>
-    <button class="button button-primary" type="submit">Submit application <span aria-hidden="true">↗</span></button><p class="form-status" role="status">Front-end demo — applications aren't stored yet</p>
+    <button class="button button-primary" type="submit">Submit application <span aria-hidden="true">↗</span></button>
   </form></section>${cta()}`;
 }
 
