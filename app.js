@@ -8,11 +8,19 @@ const services = [
 ];
 
 const industries = [
-  { id: "financial-services", title: "Financial Services", copy: "Data-intensive by nature — financial firms win on trust, speed and precision.", uses: ["Real-time risk and regulatory reporting pipelines", "Intelligent fraud and anomaly detection", "Customer intelligence and personalization", "Secure, governed data platforms"] },
+  { id: "financial-services", title: "Financial Services", copy: "Data-intensive by nature — financial firms win on trust, speed and precision.", uses: ["Real-time risk and regulatory reporting pipelines", "Intelligent fraud and anomaly detection", "Customer 360 and personalization analytics", "Modernized core and payments data platforms"] },
   { id: "retail-ecommerce", title: "Retail & E-commerce", copy: "Every transaction is a signal. We help retailers read them all.", uses: ["Demand forecasting and inventory optimization", "Unified commerce and customer data platforms", "Personalization and pricing intelligence", "Supply chain visibility and analytics"] },
   { id: "healthcare", title: "Healthcare", copy: "Better outcomes depend on data that is connected, compliant and timely.", uses: ["Care and operational analytics platforms", "Secure, interoperable patient data foundations", "Predictive capacity and resource planning", "Quality and compliance reporting automation"] },
   { id: "manufacturing", title: "Manufacturing", copy: "From shop floor to top floor — one connected picture of production.", uses: ["Predictive maintenance and asset analytics", "IoT data platforms and the digital thread", "Production quality and yield analytics", "End-to-end supply chain intelligence"] },
   { id: "technology-saas", title: "Technology & SaaS", copy: "For product companies, data is the product. We help you ship it.", uses: ["Product and usage analytics platforms", "AI feature engineering and experimentation", "Scalable multi-tenant data architectures", "Customer health and retention intelligence"] }
+];
+
+const solutionPrograms = [
+  { title: "Enterprise AI Enablement", copy: "A pragmatic path from AI curiosity to production systems — use-case discovery, data readiness, model development and MLOps, sequenced to show value early.", deliverables: ["AI opportunity map", "Production-grade pilots", "MLOps & evaluation framework"], fit: "Leadership teams under pressure to make AI real." },
+  { title: "Intelligent Data Platform", copy: "A unified lakehouse on Azure Data Factory, Databricks and Microsoft Fabric — one governed foundation for analytics, AI and operations.", deliverables: ["Lakehouse architecture blueprint", "Ingestion & orchestration layer", "Governance & quality framework"], fit: "Organizations drowning in fragmented data." },
+  { title: "Cloud Modernization Program", copy: "Move and re-platform critical workloads to Azure with a staged, low-risk migration — modern architecture without pausing the business.", deliverables: ["Migration readiness assessment", "Target architecture & landing zone", "Staged migration plan"], fit: "Enterprises carrying legacy estates." },
+  { title: "Analytics That Operate", copy: "Embedded decision intelligence: the metrics, models and dashboards wired into the workflows where teams actually make calls.", deliverables: ["Metric & KPI framework", "Self-service BI layer", "Embedded analytics apps"], fit: "Teams still deciding by spreadsheet." },
+  { title: "Digital Transformation Office", copy: "A joint execution engine that turns transformation ambition into shipped milestones — strategy, engineering and adoption in one team.", deliverables: ["Transformation roadmap", "Platform consolidation plan", "Adoption & change program"], fit: "Change programs that must show return." }
 ];
 
 const articles = [
@@ -52,9 +60,9 @@ function serviceCards() {
 }
 
 function industryCards() {
-  return industries.map((item, index) => `<a class="industry-card" href="#/industries#${item.id}">
+  return `${industries.map((item, index) => `<a class="industry-card" href="#/industries#${item.id}">
     <span class="card-index">0${index + 1} / INDUSTRY</span><h3>${item.title}</h3><p>${item.copy}</p><ul>${item.uses.slice(0, 2).map((use) => `<li>${use}</li>`).join("")}</ul>
-  </a>`).join("");
+  </a>`).join("")}<a class="industry-card industry-prompt" href="#/contact"><span class="card-index">YOUR INDUSTRY</span><h3>Don't see your industry?</h3><p>The disciplines transfer. Tell us your problem — we'll bring the engineering.</p><span class="card-link">Start a conversation <span aria-hidden="true">↗</span></span></a>`;
 }
 
 function articleCards(list = articles) {
@@ -84,7 +92,7 @@ function homePage() {
   </section>
   ${ticker()}
   <section class="section" id="capabilities"><div class="section-head"><div><p class="section-label">Capabilities</p><h2 class="section-title">Technology That Moves Business Forward.</h2></div><p class="section-copy">Six disciplines, one team — engineered to compound: data feeds AI, AI accelerates software, software transforms operations.</p></div><div class="services-grid">${serviceCards()}</div></section>
-  <section class="section"><div class="split-feature"><div class="feature-image" role="img" aria-label="Abstract visualization of a modern data platform with flowing pipelines"><span class="image-caption">Data platforms / engineered</span></div><div><p class="section-label">Why Actime Analytics</p><h2 class="section-title">From Complex Challenges to Intelligent Outcomes.</h2><p class="section-copy" style="margin:20px 0 30px">Every engagement starts with a business problem, not a technology. We bring the engineering discipline to make the answer real.</p><div class="outcome-list">${outcomes.map(([number,title,copy]) => `<div class="outcome-row"><span>${number}</span><div><h3>${title}</h3><p>${copy}</p></div></div>`).join("")}</div></div></div></section>
+  <section class="section"><div class="split-feature"><div class="feature-image" role="img" aria-label="Abstract visualization of a modern data platform with flowing pipelines"><span class="image-caption">Data platforms / engineered</span></div><div><p class="section-label">Why Actime Analytics</p><h2 class="section-title">From Complex Challenges to Intelligent Outcomes.</h2><p class="section-copy" style="margin:20px 0 30px">Every engagement starts with a business problem, not a technology. We bring the engineering discipline to make the answer real — and the pragmatism to make it last.</p><div class="outcome-list">${outcomes.map(([number,title,copy]) => `<div class="outcome-row"><span>${number}</span><div><h3>${title}</h3><p>${copy}</p></div></div>`).join("")}</div></div></div></section>
   <section class="section" style="padding-top:30px"><div class="section-head"><div><p class="section-label">Engineering & technology</p><h2 class="section-title">The Engineering Behind the Intelligence.</h2></div><p class="section-copy">Deep platform expertise that supports every engagement — chosen for the problem, mastered end to end.</p></div><div class="tech-grid">${technologies.map(([number,title,copy,tag]) => `<article class="tech-card"><span>${number} / ${tag}</span><h3>${title}</h3><p>${copy}</p></article>`).join("")}</div></section>
   <section class="section"><div class="section-head"><div><p class="section-label">Solutions by industry</p><h2 class="section-title">Fluency in Your Domain.</h2></div>${routeLink("industries", `All industries <span aria-hidden="true">↗</span>`, "button button-outline")}</div><div class="industry-grid">${industryCards()}</div></section>
   <section class="section" style="padding-top:35px"><div class="section-head"><div><p class="section-label">Insights</p><h2 class="section-title">Notes From the Engineering Floor.</h2></div>${routeLink("insights", `All insights <span aria-hidden="true">↗</span>`, "button button-outline")}</div><div class="insight-grid">${articleCards(articles.slice(0,3))}</div></section>${cta()}`;
@@ -101,11 +109,11 @@ function servicesPage() {
 }
 
 function solutionsPage() {
-  return `${pageHero("Solutions", "Intelligence built for what comes next.", "We connect data, software, cloud and AI to help teams solve the business problems that matter — with practical engineering that makes progress measurable.")}<section class="section"><div class="solutions-grid">${outcomes.map(([number,title,copy]) => `<article class="simple-card"><span class="card-index">${number} / OUTCOME</span><h3>${title}</h3><p>${copy}</p></article>`).join("")}</div></section><section class="section" style="padding-top:0"><div class="split-feature"><div class="feature-image" role="img" aria-label="Abstract visualization of a modern data platform with flowing pipelines"><span class="image-caption">Intelligence / engineered</span></div><div><p class="section-label">How we work</p><h2 class="section-title">One connected engineering team.</h2><p class="section-copy" style="margin-top:20px">Data feeds AI. AI accelerates software. Software transforms operations. We bring the disciplines together around your business goals, then build, measure and improve with your team.</p>${routeLink("services", `Explore our services <span aria-hidden="true">↗</span>`, "button button-primary")}</div></div></section>${cta()}`;
+  return `${pageHero("Solutions", "Programs built for outcomes, not output.", "Packaged ways of working that turn strategy into shipped systems — each one a proven shape of engagement, adapted to your context.")}<section class="section"><p class="section-label">How we engage</p><div class="program-grid">${solutionPrograms.map((program, index) => `<article class="program-card"><span class="card-index">0${index + 1} / PROGRAM</span><h2>${program.title}</h2><p>${program.copy}</p><p class="program-label">What you get</p><ul>${program.deliverables.map((deliverable) => `<li>${deliverable}</li>`).join("")}</ul><p class="program-fit"><strong>Best for:</strong> ${program.fit}</p><a class="card-link" href="#/contact">Discuss <span aria-hidden="true">↗</span></a></article>`).join("")}</div><p class="section-copy program-note">Every program is tailored before it starts. Bring us the business problem — we'll shape the engagement around it.</p></section>${cta()}`;
 }
 
 function industriesPage() {
-  return `${pageHero("Industries", "Fluency in your domain.", "We bring deep engineering capability and a practical understanding of the challenges facing data-intensive businesses.")}<section class="section">${industries.map((item,index) => `<article class="industry-detail" id="${item.id}"><div><p class="section-label">0${index + 1} / Potential use cases</p><h2>${item.title}</h2><p>${item.copy}</p></div><ul>${item.uses.map((use,i) => `<li><span>0${i + 1}</span>${use}</li>`).join("")}</ul></article>`).join("")}<div class="cta-band" style="margin-top:42px"><div class="cta-copy"><p class="section-label">Not listed?</p><h2>The engineering transfers. The curiosity is yours to bring.</h2></div>${routeLink("contact", `Tell us about your industry <span aria-hidden="true">↗</span>`, "button button-primary")}</div></section>${cta()}`;
+  return `${pageHero("Industries", "Engineering that speaks your domain.", "The disciplines are universal; the use cases are not. Here is how our capabilities land in five data-intensive industries.")}<section class="section">${industries.map((item,index) => `<article class="industry-detail" id="${item.id}"><div><h2>${item.title}</h2><p>${item.copy}</p></div><div><p class="section-label">0${index + 1} / Potential use cases</p><ul>${item.uses.map((use,i) => `<li><span>0${i + 1}</span>${use}</li>`).join("")}</ul></div></article>`).join("")}<div class="cta-band" style="margin-top:42px"><div class="cta-copy"><p class="section-label">Not listed?</p><h2>The engineering transfers. The curiosity is yours to bring.</h2></div>${routeLink("contact", `Tell us about your industry <span aria-hidden="true">↗</span>`, "button button-primary")}</div></section>${cta()}`;
 }
 
 function insightsPage() {
@@ -130,9 +138,14 @@ function aboutPage() {
 }
 
 function contactPage() {
-  return `${pageHero("Contact", "Let's build something intelligent.", "Tell us about the challenge you're facing. We'll bring the engineers, the data and the AI to solve it.")}<section class="section"><div class="contact-layout"><div><p class="section-label">Start a conversation</p><h2>What's the problem you want to solve?</h2><p>Share a little about your goals, your data, or the systems you want to improve. We'll get back to you to explore what is possible.</p><div class="contact-info"><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com ↗</a><p>Remote-first<br>Serving clients globally</p></div></div><form class="contact-form">
-    <div class="form-field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" placeholder="Alex Morgan" required></div>
-    <div class="form-field"><label for="email">Work email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required></div>
+  const nextSteps = [
+    ["01", "We listen", "A 30-minute conversation about your problem, your data and your constraints. No pitch deck."],
+    ["02", "We frame the problem", "We restate what we heard in engineering terms — risks, options and honest trade-offs."],
+    ["03", "We propose the path", "A concrete next step: a discovery sprint, a pilot, or a straight answer that you don't need us yet."]
+  ];
+  return `${pageHero("Contact", "Let's talk about what's next.", "Tell us where the friction is — a legacy platform, a data question, an AI ambition. We'll come back with an engineer's answer, not a brochure.")}<section class="section"><div class="contact-layout"><div><p class="section-label">What happens next</p><div class="next-steps">${nextSteps.map(([number,title,copy]) => `<article class="next-step"><span>${number}</span><div><h3>${title}</h3><p>${copy}</p></div></article>`).join("")}</div><div class="contact-info"><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com ↗</a></div></div><form class="contact-form">
+    <div class="form-field"><label for="name">Name *</label><input id="name" name="name" autocomplete="name" placeholder="Jane Cooper" required></div>
+    <div class="form-field"><label for="email">Work email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required></div>
     <div class="form-field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" placeholder="Company Inc."></div>
     <div class="form-field"><label for="interest">I'm interested in</label><select id="interest" name="interest">${services.map((item) => `<option>${item.title}</option>`).join("")}<option>Something else</option></select></div>
     <div class="form-field full"><label for="challenge">What are you trying to solve? *</label><textarea id="challenge" name="challenge" placeholder="Tell us about the challenge, the data you have, and what success looks like." required></textarea></div>
@@ -140,16 +153,28 @@ function contactPage() {
   </form></div></section>${cta()}`;
 }
 
+function careersPage() {
+  const roles = ["Senior Data Engineer (Azure)", "AI / ML Engineer", "Cloud Engineer", "Senior Software Engineer", "Analytics Consultant", "Other"];
+  return `${pageHero("Careers", "Apply to Actime Analytics.", "Tell us who you are, pick the role you're after, and share your resume — we'll be in touch.")}<section class="section"><form class="career-form">
+    <div class="form-field"><label for="applicant-name">Full name *</label><input id="applicant-name" name="name" autocomplete="name" placeholder="Jane Cooper" required></div>
+    <div class="form-field"><label for="applicant-role">Role *</label><select id="applicant-role" name="role" required><option value="" selected disabled>Select a role</option>${roles.map((role) => `<option>${role}</option>`).join("")}</select></div>
+    <div class="form-field"><label for="applicant-email">Email *</label><input id="applicant-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required></div>
+    <div class="form-field"><label for="applicant-phone">Phone number *</label><input id="applicant-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000" required></div>
+    <div class="form-field full"><label for="resume">Resume *</label><input class="file-input" id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required><span class="file-hint">PDF or DOC — required</span></div>
+    <button class="button button-primary" type="submit">Submit application <span aria-hidden="true">↗</span></button><p class="form-status" role="status">Front-end demo — applications aren't stored yet</p>
+  </form></section>${cta()}`;
+}
+
 function footer() {
   return `<div class="site-footer"><div class="footer-grid">
     <div class="footer-about"><a class="brand" href="#/" aria-label="Actime Analytics home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="brand-type"><strong>ACTIME.</strong><small>ANALYTICS</small></span></a><p>AI-native software engineering, data engineering and analytics. We help businesses transform ideas into intelligent digital solutions.</p><a href="mailto:info@actimeanalytics.com">info@actimeanalytics.com</a></div>
     <div class="footer-column"><h3>Services</h3>${services.slice(0,5).map((item) => routeLink(`services#${item.id}`, item.title)).join("")}</div>
-    <div class="footer-column"><h3>Company</h3>${[["", "Home"],["about","About Us"],["solutions","Solutions"],["industries","Industries"],["insights","Insights"],["contact","Contact"]].map(([path,label]) => routeLink(path,label)).join("")}</div>
+    <div class="footer-column"><h3>Company</h3>${[["", "Home"],["about","About Us"],["careers","Careers"],["solutions","Solutions"],["industries","Industries"],["insights","Insights"],["contact","Contact"]].map(([path,label]) => routeLink(path,label)).join("")}</div>
     <div class="footer-column"><h3>Presence</h3><p>Remote-first<br>Serving clients globally</p></div>
   </div><p class="footer-wordmark" aria-hidden="true">ACTIME</p><div class="footer-bottom"><p>© 2026 Actime Analytics. All rights reserved.</p><p>Engineering Intelligence. Accelerating Innovation.</p></div></div>`;
 }
 
-const pages = { "/": homePage, "/home": homePage, "/services": servicesPage, "/solutions": solutionsPage, "/industries": industriesPage, "/insights": insightsPage, "/about": aboutPage, "/contact": contactPage };
+const pages = { "/": homePage, "/home": homePage, "/services": servicesPage, "/solutions": solutionsPage, "/industries": industriesPage, "/insights": insightsPage, "/about": aboutPage, "/careers": careersPage, "/contact": contactPage };
 const app = document.querySelector("#app");
 const footerRoot = document.querySelector("#footer");
 const menu = document.querySelector(".menu-layer");
@@ -197,10 +222,12 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("submit", (event) => {
-  if (!event.target.matches(".contact-form")) return;
+  if (!event.target.matches(".contact-form, .career-form")) return;
   event.preventDefault();
   const status = event.target.querySelector(".form-status");
-  status.textContent = "Thanks for reaching out. This demo form is not connected to a mailbox yet.";
+  status.textContent = event.target.matches(".career-form")
+    ? "Thanks for your interest. This demo application form does not store or send applications yet."
+    : "Thanks for reaching out. This demo form is not connected to a mailbox yet.";
 });
 
 window.addEventListener("hashchange", render);

@@ -3,6 +3,7 @@
 A self-contained static recreation of the authorized Actime Analytics preview, including its seven main views and generated image assets.
 
 The canonical and social-sharing domain is configured as `https://actimeanalytics.com/`.
+The content and careers/contact flows reflect the latest captured preview. The public contact address in this project is `info@actimeanalytics.com`.
 
 ## Run it
 
@@ -14,9 +15,10 @@ Open `index.html` in a browser. Navigation uses hash routes, so it works without
 - `index.html#/industries` — Industries
 - `index.html#/insights` — Insights
 - `index.html#/about` — About
+- `index.html#/careers` — Careers
 - `index.html#/contact` — Contact
 
-The contact form is a front-end demo and does not deliver submissions.
+The careers and contact forms are front-end demos; submissions and uploaded resumes are not stored or delivered.
 
 ## Publish on the custom domain
 
