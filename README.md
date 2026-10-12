@@ -20,4 +20,16 @@ The contact form is a front-end demo and does not deliver submissions.
 
 ## Publish on the custom domain
 
-The domain currently displays a GoDaddy parked page. The site files do not change domain DNS or publish themselves. To make the site live, deploy this folder to a static web host, configure `actimeanalytics.com` as the site's custom domain in that host, and update the domain's GoDaddy DNS records to the values provided by the host. Enable HTTPS at the host. Keep the bare domain as the preferred canonical domain, and configure `www.actimeanalytics.com` to redirect to it if desired.
+This project is configured to deploy from the `actime-site-clone` branch to GitHub Pages using `.github/workflows/deploy-pages.yml`. The custom domain file is `CNAME`.
+
+1. Push the `actime-site-clone` branch to the GitHub repository.
+2. In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
+3. In your domain registrar's DNS settings, point the apex (`@`) to GitHub Pages with these `A` records:
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
+4. Optionally add `www` as a `CNAME` to `<your-github-owner>.github.io` if you want the `www` address to resolve too.
+5. After DNS propagates and the Pages deployment succeeds, enable **Enforce HTTPS** in **Settings → Pages**.
+
+The domain currently displays a GoDaddy parked page. These project files cannot change the domain's DNS or publish to GitHub without repository access. The contact form remains a front-end demo and does not deliver submissions.
